@@ -32,7 +32,7 @@ public class Invoice {
 
     private Id id;
 
-    Invoice(ClientData client) {
+    private Invoice(ClientData client) {
         this.id = Id.generate();
         this.client = client;
         this.items = new ArrayList<>();
