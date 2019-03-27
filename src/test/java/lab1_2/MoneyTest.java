@@ -31,7 +31,7 @@ public class MoneyTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldThrownIllegalArgumentExceptionWhenCurrencyMismatch() {
+    public void shouldThrownIllegalArgumentExceptionWhenCurrencyMismatchInAdd() {
         Money money = new Money(100);
         Money addValue = new Money(300, Currency.getInstance("USD"));
         money.add(addValue);
@@ -46,4 +46,10 @@ public class MoneyTest {
         assertThat(new Money(200), equalTo(result));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrownIllegalArgumentExceptionWhenCurrencyMismatchInSubtract() {
+        Money money = new Money(100);
+        Money sub = new Money(300, Currency.getInstance("USD"));
+        money.subtract(sub);
+    }
 }
