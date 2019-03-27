@@ -52,4 +52,11 @@ public class MoneyTest {
         Money sub = new Money(300, Currency.getInstance("USD"));
         money.subtract(sub);
     }
+
+    @Test
+    public void currencyCodeTest() {
+        Money usdMoney = new Money(300, Currency.getInstance("USD"));
+        String usdCode = "USD";
+        assertThat(usdMoney.getCurrencyCode(), equalTo(usdCode));
+    }
 }
