@@ -21,6 +21,7 @@ public class MoneyTest {
         assertThat(shouldBe, equalTo(result));
     }
 
+    @Test
     public void shouldReturnAddedValue() {
         Money money = new Money(100);
         Money addValue = new Money(300);
@@ -31,9 +32,18 @@ public class MoneyTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrownIllegalArgumentExceptionWhenCurrencyMismatch() {
-        final int[] emptyTab = {};
         Money money = new Money(100);
         Money addValue = new Money(300, Currency.getInstance("USD"));
-        Money result = money.add(addValue);
+        money.add(addValue);
     }
+
+    @Test
+    public void shouldReturnSubtractedValue() {
+        Money money = new Money(300);
+        Money sub = new Money(100);
+
+        Money result = money.subtract(sub);
+        assertThat(new Money(200), equalTo(result));
+    }
+
 }
