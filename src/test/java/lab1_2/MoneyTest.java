@@ -59,4 +59,13 @@ public class MoneyTest {
         String usdCode = "USD";
         assertThat(usdMoney.getCurrencyCode(), equalTo(usdCode));
     }
+
+    @Test
+    public void shouldReturnTrueIfMoneyIsGreater() {
+        Money more = new Money(300);
+        Money less = new Money(100);
+
+        assertThat(more.greaterThan(less), equalTo(true));
+    }
+
 }
