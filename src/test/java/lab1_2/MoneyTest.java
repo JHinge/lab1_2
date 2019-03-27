@@ -77,7 +77,7 @@ public class MoneyTest {
     }
 
     @Test
-    public void shouldReturnTruefMoneyIsGreaterInnLessThanMethod() {
+    public void shouldReturnTruefMoneyIsLessInnLessThanMethod() {
         Money more = new Money(300);
         Money less = new Money(100);
 
@@ -85,11 +85,29 @@ public class MoneyTest {
     }
 
     @Test
-    public void shouldReturnFalsefMoneyIsGreaterInnLessThanMethod() {
+    public void shouldReturnFalsefMoneyIsLessInnLessThanMethod() {
         Money more = new Money(300);
         Money less = new Money(100);
 
         assertThat(more.lessThan(less), equalTo(false));
     }
 
+    @Test
+    public void shouldReturnFalsefMoneyIsGreaterInnLessOrEqualsThanMethod() {
+        Money more = new Money(300);
+        Money less = new Money(100);
+
+        assertThat(more.lessOrEquals(less), equalTo(false));
+    }
+    /*
+     * @Test public void shouldReturnFalsefMoneyIsLessInnOrEqualsThanMethod() { Money more = new Money(300); Money less
+     * = new Money(100);
+     * 
+     * assertThat(more.lessOrEquals(less), equalTo(false)); }
+     * 
+     * @Test public void shouldReturnFalsefMoneyIsEqualInnOrEqualsThanMethod() { Money more = new Money(300); Money less
+     * = new Money(100);
+     * 
+     * assertThat(more.lessThan(less), equalTo(false)); }
+     */
 }
