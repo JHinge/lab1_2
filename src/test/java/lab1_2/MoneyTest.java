@@ -99,15 +99,18 @@ public class MoneyTest {
 
         assertThat(more.lessOrEquals(less), equalTo(false));
     }
+
+    @Test
+    public void shouldReturnTruefMoneyIsLessInnOrEqualsThanMethod() {
+        Money more = new Money(300);
+        Money less = new Money(100);
+
+        assertThat(less.lessOrEquals(more), equalTo(true));
+    }
     /*
-     * @Test public void shouldReturnFalsefMoneyIsLessInnOrEqualsThanMethod() { Money more = new Money(300); Money less
-     * = new Money(100);
-     * 
-     * assertThat(more.lessOrEquals(less), equalTo(false)); }
-     * 
      * @Test public void shouldReturnFalsefMoneyIsEqualInnOrEqualsThanMethod() { Money more = new Money(300); Money less
      * = new Money(100);
-     * 
+     *
      * assertThat(more.lessThan(less), equalTo(false)); }
      */
 }
