@@ -61,11 +61,19 @@ public class MoneyTest {
     }
 
     @Test
-    public void shouldReturnTrueIfMoneyIsGreater() {
+    public void shouldReturnTrueIfMoneyIsGreaterInGreaterThanMethod() {
         Money more = new Money(300);
         Money less = new Money(100);
 
         assertThat(more.greaterThan(less), equalTo(true));
+    }
+
+    @Test
+    public void shouldReturnFalseIfMoneyIsGreaterInnGreaterThanMethod() {
+        Money more = new Money(300);
+        Money less = new Money(100);
+
+        assertThat(less.greaterThan(more), equalTo(false));
     }
 
 }
