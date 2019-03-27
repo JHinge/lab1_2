@@ -19,4 +19,11 @@ public class MoneyTest {
         assertThat(shouldBe, equalTo(result));
     }
 
+    public void shouldReturnAddedValue() {
+        Money money = new Money(100);
+        Money addValue = new Money(300);
+
+        Money result = money.add(addValue);
+        assertThat(new Money(400), equalTo(result));
+    }
 }
