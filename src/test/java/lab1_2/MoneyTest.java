@@ -76,4 +76,12 @@ public class MoneyTest {
         assertThat(less.greaterThan(more), equalTo(false));
     }
 
+    @Test
+    public void shouldReturnTruefMoneyIsGreaterInnLessThanMethod() {
+        Money more = new Money(300);
+        Money less = new Money(100);
+
+        assertThat(less.lessThan(more), equalTo(true));
+    }
+
 }
